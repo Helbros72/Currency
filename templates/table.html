@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Rates</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+        table, th, td {
+            border: 1px solid black;
+
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Currency Rates</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        {%  for key, val in rates.items  %}
+        <tr>
+            <td>{{  val.CharCode }}</td>
+            <td>{{  val.Name }}</td>
+            <td>{{ val.Value }}</td>
+        </tr>
+        {%  endfor %}
+        </tbody>
+    </table>
+
+    {{ data }}
+</body>
+</html>
+{% endblock %}
